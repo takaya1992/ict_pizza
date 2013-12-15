@@ -69,7 +69,7 @@ if (!$product) {
     <div class="navbar navbar-default" role="navigation">
       <div class="container">
         <div class="navbar-header">
-          <a class="navbar-brand" href="#">電設ピザ</a>
+          <a class="navbar-brand" href="./index.php">電設ピザ</a>
         </div>
       </div><!-- /.container -->
     </div><!-- /.navbar -->
@@ -116,7 +116,8 @@ if (!$product) {
                     <button type="submit" class="btn btn-default">買い物カゴに入れる</button>
                   </form>
                 </div>
-              </div>
+             </div><!--/.panel-->
+             <p><a href="./index.php">&lt;&lt; メニューへ戻る</a></p>
             </div>
           </div>
         </div><!--/span-->

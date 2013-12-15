@@ -4,6 +4,14 @@ require_once './Config/config.php';
 require_once './DB/mysql.php';
 require_once './DB/cart.php';
 
+if (!empty($_POST)) {
+	if (array_key_exists('delete', $_POST)) {
+		if ($_POST['delete'] == 'all') {
+			$_SESSION['Cart'] = array();
+		}
+	}
+}
+
 
 ?>
 <!DOCTYPE html>
@@ -31,7 +39,7 @@ require_once './DB/cart.php';
     <div class="navbar navbar-default" role="navigation">
       <div class="container">
         <div class="navbar-header">
-          <a class="navbar-brand" href="#">電設ピザ</a>
+          <a class="navbar-brand" href="./index.php">電設ピザ</a>
         </div>
       </div><!-- /.container -->
     </div><!-- /.navbar -->
@@ -47,6 +55,7 @@ require_once './DB/cart.php';
               <?php if (is_array($_SESSION['Cart']) && count($_SESSION['Cart']) == 0): ?>
                 <p>現在、カートに商品がありません。</p>
               <?php else: ?>
+              	<form action="" method="post">
                 <table class="table">
                   <tr>
                     <th>商品名</th>
@@ -69,6 +78,9 @@ require_once './DB/cart.php';
                     <td style="text-align: right;"><?php echo '¥'. number_format(getCartTotalAmount()); ?></td>
                   </tr>
                 </table>
+                
+                <button type="submit" class="btn btn-danger" name="delete" value="all">カート内一括削除</button> 
+                </form>
               <?php endif; ?>
             </div>
           </div><!--/.panel-->

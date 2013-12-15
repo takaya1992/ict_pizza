@@ -49,7 +49,7 @@ $products = getAllProductsWithSpecifications();
     <div class="navbar navbar-default" role="navigation">
       <div class="container">
         <div class="navbar-header">
-          <a class="navbar-brand" href="#">電設ピザ</a>
+          <a class="navbar-brand" href="./index.php">電設ピザ</a>
         </div>
       </div><!-- /.container -->
     </div><!-- /.navbar -->
@@ -62,10 +62,12 @@ $products = getAllProductsWithSpecifications();
           	<div class="col-xs-4">
           	  <div class="panel panel-default">
                 <div class="panel-heading">
-                  <h3 class="panel-title"><?php echo $product['name']; ?></h3>
+                  <h3 class="panel-title"><a href="<?php echo 'detail.php?id='. $product['id']; ?>"><?php echo $product['name']; ?></a></h3>
                 </div>
                 <div class="panel-body">
-                  <img src="images/dummy.jpg" class="img-responsive">
+                  <a href="<?php echo 'detail.php?id='. $product['id']; ?>">
+                    <img src="images/dummy.jpg" class="img-responsive">
+                  </a>
                   <table class="table">
                     <tr>
                     <?php foreach ($product['specifications'] as $specification): ?>
