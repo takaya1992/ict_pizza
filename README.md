@@ -6,9 +6,9 @@ ict_pizza
 
 ## DBの準備
 
-DB/sql/mysql-schema.sql
+`DB/sql/mysql-schema.sql`
 にテーブル構造のSQLを、
-DB/sql/mysql-data.sql
+`DB/sql/mysql-data.sql`
 にサンプルデータのSQLを置いたので
 
 ```bash
