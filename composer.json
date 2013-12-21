@@ -1,0 +1,12 @@
+{
+    "repositories": [
+        {
+            "type": "pear",
+            "url": "http://pear.php.net/"
+        }
+    ],
+    "require": {
+        "pear-pear/Mail": "1.2.*",
+        "pear-pear/Net_SMTP": ">=1.4.1"
+    }
+}

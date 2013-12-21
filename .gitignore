@@ -17,4 +17,4 @@ Thumbs.db
 #################################################
 /Config/config.php
 composer.phar
-/vender
+/vendor/*

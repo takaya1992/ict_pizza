@@ -4,12 +4,17 @@ require_once './Config/config.php';
 require_once './DB/mysql.php';
 require_once './DB/cart.php';
 
+
 if (!empty($_POST)) {
 	if (array_key_exists('delete', $_POST)) {
 		if ($_POST['delete'] == 'all') {
 			$_SESSION['Cart'] = array();
-		}
-	}
+        } else {
+            if (0 <= $_POST['delete'] && $_POST['delete'] < count($_SESSION['Cart'])) {
+                array_splice($_SESSION['Cart'], $_POST['delete'], 1);
+            }
+        }
+    }
 }
 
 
@@ -63,19 +68,22 @@ if (!empty($_POST)) {
                     <th>単価</th>
                     <th>個数</th>
                     <th>小計</th>
+                    <th>削除</th>
                   </tr>
-                  <?php foreach ($_SESSION['Cart'] as $cart): ?>
+                  <?php foreach ($_SESSION['Cart'] as $key => $cart): ?>
                     <tr>
                       <td><?php echo $cart['name']; ?></td>
                       <td><?php echo $cart['specification']['size']['name']; ?></td>
                       <td style="text-align: right;"><?php echo '¥'. number_format($cart['specification']['price']); ?></td>
                       <td style="text-align: right;"><?php echo $cart['quantity']; ?></td>
                       <td style="text-align: right;"><?php echo '¥'. number_format($cart['specification']['price'] * $cart['quantity']); ?></td>
+                      <td><button type="submit" class="btn btn-default" name="delete" value="<?php echo $key; ?>">削除</button></td>
                     </tr>
                   <?php endforeach; ?>
                   <tr>
                     <th colspan="4">合計</th>
                     <td style="text-align: right;"><?php echo '¥'. number_format(getCartTotalAmount()); ?></td>
+                    <td></td>
                   </tr>
                 </table>
                 
@@ -90,7 +98,7 @@ if (!empty($_POST)) {
             </div>
             <div class="panel-body">
               <p>以上の内容でよろしければ配達先情報をご入力ください。</p>
-              <form role="form" action="" method="post">
+              <form role="form" action="order.php" method="post">
                 <div class="form-group">
                   <label for="orderInputName">お名前</label>
                   <input type="text" class="form-control" id="orderInputName" name="name">

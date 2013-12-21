@@ -45,6 +45,11 @@ function getCartItemIndex($product_id, $size_id) {
 	return false;
 }
 
+/**
+ * getCartTotalAmount()
+ *
+ * カート内の合計金額を取得する
+ */
 function getCartTotalAmount() {
 	$amount = 0;
 	foreach ($_SESSION['Cart'] as $cart) {

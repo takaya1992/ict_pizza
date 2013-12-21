@@ -117,6 +117,8 @@ function getProductSpecificationsByProductId($id) {
 	return $specifications;
 }
 
+
+
 /**
  * getSizeById($id)
  * 

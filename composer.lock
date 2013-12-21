@@ -1,0 +1,104 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
+    ],
+    "hash": "fcdfd6327fa9bc6adec4bf8e9c54d164",
+    "packages": [
+        {
+            "name": "pear-pear.php.net/Mail",
+            "version": "1.2.0",
+            "dist": {
+                "type": "file",
+                "url": "http://pear.php.net/get/Mail-1.2.0.tgz",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "php": ">=4.4.9.0"
+            },
+            "replace": {
+                "pear-pear/mail": "== 1.2.0.0"
+            },
+            "type": "pear-library",
+            "autoload": {
+                "classmap": [
+                    ""
+                ]
+            },
+            "include-path": [
+                "/"
+            ],
+            "description": "PEAR's Mail package defines an interface for implementing mailers under the PEAR hierarchy.  It also provides supporting functions useful to multiple mailer backends.  Currently supported backends include: PHP's native mail() function, sendmail, and SMTP.  This package also provides a RFC822 email address list validation utility class."
+        },
+        {
+            "name": "pear-pear.php.net/Net_SMTP",
+            "version": "1.6.2",
+            "dist": {
+                "type": "file",
+                "url": "http://pear.php.net/get/Net_SMTP-1.6.2.tgz",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "pear-pear.php.net/net_socket": ">=1.0.7.0",
+                "php": ">=4.0.5.0"
+            },
+            "replace": {
+                "pear-pear/net_smtp": "== 1.6.2.0"
+            },
+            "type": "pear-library",
+            "autoload": {
+                "classmap": [
+                    ""
+                ]
+            },
+            "include-path": [
+                "/"
+            ],
+            "description": "Provides an implementation of the SMTP protocol using PEAR's Net_Socket class."
+        },
+        {
+            "name": "pear-pear.php.net/Net_Socket",
+            "version": "1.0.14",
+            "dist": {
+                "type": "file",
+                "url": "http://pear.php.net/get/Net_Socket-1.0.14.tgz",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "php": ">=4.3.0.0"
+            },
+            "replace": {
+                "pear-pear/net_socket": "== 1.0.14.0"
+            },
+            "type": "pear-library",
+            "autoload": {
+                "classmap": [
+                    ""
+                ]
+            },
+            "include-path": [
+                "/"
+            ],
+            "description": "Net_Socket is a class interface to TCP sockets.  It provides blocking\n  and non-blocking operation, with different reading and writing modes\n  (byte-wise, block-wise, line-wise and special formats like network\n  byte-order ip addresses)."
+        }
+    ],
+    "packages-dev": [
+
+    ],
+    "aliases": [
+
+    ],
+    "minimum-stability": "stable",
+    "stability-flags": [
+
+    ],
+    "platform": [
+
+    ],
+    "platform-dev": [
+
+    ]
+}

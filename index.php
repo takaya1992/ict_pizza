@@ -20,9 +20,18 @@ require_once './DB/cart.php';
 ====================
 */
 
+$products__ = getAllProducts();
+
+//var_dump($products__);
+
+
+//print "========================\n";
+
 $products = getAllProductsWithSpecifications();
 
+//var_dump($products);
 
+//exit;
 ?>
 <!DOCTYPE html>
 <html lang="ja">
